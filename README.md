@@ -1,5 +1,5 @@
 # IFQMediator
-模块化Mediator方案
+iOS组件化Mediator方案
 结合CTMediator和蘑菇街protocol方案的Mediator
 基本参考CTMediator将target-action换成protocol的形式。
 
