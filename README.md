@@ -1,0 +1,2 @@
+# IFQMediator
+结合CTMediator和registerProtocol形式的Mediator
