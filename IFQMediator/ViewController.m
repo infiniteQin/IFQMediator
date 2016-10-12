@@ -28,7 +28,7 @@
 - (IBAction)openURL:(id)sender {
     NSString *urlStr = @"schemeName://ModuleA/presetToTest01VCWithBgColor:?bgcolor=009911";
     NSURL *url = [NSURL URLWithString:urlStr];
-    [[IFQMediator sharedInstance] performActionWithUrl:url callback:NULL];
+    [IFQMediator performActionWithUrl:url callback:NULL];
 }
 
 @end

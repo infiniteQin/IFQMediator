@@ -30,10 +30,10 @@ static NSString * const APP_SCHEME = @"schemeName";
  scheme://[MediatorCategory]/[action]?[params]
  
  url sample:
- ifa://ModuleA/actionB?p1=aa&p2&p3=null
+ ifa://ModuleA/actionB:?p1=aa&p2&p3=null
  */
 
-- (id)performActionWithUrl:(NSURL *)url callback:(void(^)(BOOL isExcSucc,id returnVal))callback
++ (id)performActionWithUrl:(NSURL *)url callback:(void(^)(BOOL isExcSucc,id returnVal))callback
 {
 
     if (![url.scheme isEqualToString:APP_SCHEME]) {
@@ -65,7 +65,10 @@ static NSString * const APP_SCHEME = @"schemeName";
     }
     
     // 这个demo针对URL的路由处理非常简单，就只是取对应的target名字和method名字，但这已经足以应对绝大部份需求。如果需要拓展，可以在这个方法调用之前加入完整的路由逻辑
-    id rs = [self performSelector:NSSelectorFromString(actionName) withObjects:params];
+    id rs = [self performSelector:NSSelectorFromString(actionName) withObjects:params failure:^{
+        // 处理URL action出错
+        NSLog(@"IFQMediator 所有Category中不存在 %@ 方法",actionName);
+    }];
     return rs;
 }
 
@@ -84,10 +87,7 @@ static NSString * const APP_SCHEME = @"schemeName";
     }
     
     if ([implClassInstance respondsToSelector:action]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         id returnVal = [implClassInstance performSelector:action withObjects:params];
-#pragma clang diagnostic pop
         if (callback) {
             callback(YES,returnVal);
         }
@@ -95,11 +95,7 @@ static NSString * const APP_SCHEME = @"schemeName";
         // 这里是处理无响应请求的地方，如果无响应，则尝试调用对应target的notFound方法统一处理
         SEL action = NSSelectorFromString(@"notFound:");
         if ([implClassInstance respondsToSelector:action]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            [implClassInstance performSelector:action withObject:params];
-            
-#pragma clang diagnostic pop
+            [implClassInstance performSelector:action withObjects:params];
         } else {
             // 这里也是处理无响应请求的地方，在notFound都没有的时候，这个demo是直接return了。实际开发过程中，可以用前面提到的固定的target顶上的。
             

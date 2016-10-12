@@ -12,7 +12,7 @@
 
 + (instancetype)sharedInstance;
 
-- (id)performActionWithUrl:(NSURL *)url callback:(void(^)(BOOL isExcSucc,id returnVal))callback;
++ (id)performActionWithUrl:(NSURL *)url callback:(void(^)(BOOL isExcSucc,id returnVal))callback;
 
 + (id)performModuleProtocol:(NSString *)protocolName action:(NSString *)actionName params:(NSArray *)params callback:(void(^)(BOOL isExcSucc,id returnVal))callback;
 

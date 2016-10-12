@@ -12,4 +12,6 @@
 
 - (id)performSelector:(SEL)selector withObjects:(NSArray *)objects;
 
++ (id)performSelector:(SEL)selector withObjects:(NSArray *)objects failure:(void(^)())failure;
+
 @end

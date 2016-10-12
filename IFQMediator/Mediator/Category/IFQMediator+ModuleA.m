@@ -34,7 +34,8 @@
     return nil;
 }
 
-- (void)presetToTest01VCWithBgColor:(NSString*)hexColor {
+
++ (void)presetToTest01VCWithBgColor:(NSString*)hexColor {
     UIColor *bgColor = [UIColor blueColor];
     id<ModuleATest01ViewControllerProtocol> t1VC = [[IFQProtocolManager manager] creatInstanceFromProtocol:@protocol(ModuleATest01ViewControllerProtocol)];
     if ([t1VC respondsToSelector:@selector(setBgColor:)]) {
