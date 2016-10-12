@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F4DAC3F1DADF01E00C12BB6 /* ModuleATest01ViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleATest01ViewControllerProtocol.h; sourceTree = "<group>"; };
 		3F7B6CF81DAB5E9000F1B5FC /* IFQMediator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IFQMediator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7B6CFC1DAB5E9000F1B5FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F7B6CFE1DAB5E9000F1B5FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		3F7B6D0C1DAB5E9000F1B5FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7B6D141DAB5EC600F1B5FC /* IFQMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFQMediator.h; sourceTree = "<group>"; };
 		3F7B6D151DAB5EC600F1B5FC /* IFQMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFQMediator.m; sourceTree = "<group>"; };
-		3F7B6D1B1DAB5FCA00F1B5FC /* ModuleATest01ViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleATest01ViewControllerProtocol.h; sourceTree = "<group>"; };
 		3F7B6D1C1DAB5FFB00F1B5FC /* Test01ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test01ViewController.h; sourceTree = "<group>"; };
 		3F7B6D1D1DAB5FFB00F1B5FC /* Test01ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test01ViewController.m; sourceTree = "<group>"; };
 		3F7B6D1F1DAB610200F1B5FC /* IFQProtocolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFQProtocolManager.h; sourceTree = "<group>"; };
@@ -55,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F4DAC3E1DADEFF300C12BB6 /* ModuleA */ = {
+			isa = PBXGroup;
+			children = (
+				3F4DAC3F1DADF01E00C12BB6 /* ModuleATest01ViewControllerProtocol.h */,
+			);
+			path = ModuleA;
+			sourceTree = "<group>";
+		};
 		3F7B6CEF1DAB5E9000F1B5FC = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +109,7 @@
 		3F7B6D121DAB5E9800F1B5FC /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				3F7B6D1B1DAB5FCA00F1B5FC /* ModuleATest01ViewControllerProtocol.h */,
+				3F4DAC3E1DADEFF300C12BB6 /* ModuleA */,
 				3F7B6D1F1DAB610200F1B5FC /* IFQProtocolManager.h */,
 				3F7B6D201DAB610200F1B5FC /* IFQProtocolManager.m */,
 			);
@@ -382,6 +390,7 @@
 				3F7B6D111DAB5E9000F1B5FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
